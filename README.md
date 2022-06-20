@@ -1,6 +1,6 @@
 # Python Library RestApi
 Simple web library, wich contains of three books
-## Directorys
+## Directories
 /library
 /library/{author}
 /library/{author}/{work}
