@@ -1,7 +1,7 @@
 # Python Library RestApi
 Simple web library, wich contains of three books
 ## Directories
-/library
+/library \n
 /library/{author}
 /library/{author}/{work}
 "begin" - is the first character of the product from which it should be returned on request.
