@@ -67,10 +67,7 @@ def Gregory_books(name_of_book : str , begin: int = None  ,end: int = None):
 				Та его я пролил в травы,\
 				Не мечтая о богатстве."
 		#size = len(text)
-		if(begin == None and end == None):
-			return (text)
-		elif(begin != None or end != None):
-			return (text[begin:end])
+		return text if begin is None and end is None else text[begin:end]
 	elif name_of_book == "jeny":
 		text = "Не паситесь в офсайте,\
 			в тени у чужого крыльца.\
@@ -92,10 +89,7 @@ def Gregory_books(name_of_book : str , begin: int = None  ,end: int = None):
 		и травы по грудь, — и снега.\
 		От морей не убудет,\
 		пока у морей — берега."
-		if(begin == None and end == None):
-			return (text)
-		elif(begin != None or end != None):
-			return (text[begin:end])	
+		return text if begin is None and end is None else text[begin:end]
 	elif name_of_book == "zemnoy":
 		text = "Земной не знает, что пребудет там,\
 			за тем холмом, уже иного знанья.\
@@ -116,10 +110,7 @@ def Gregory_books(name_of_book : str , begin: int = None  ,end: int = None):
 			И ненависть была расчехлена.\
 			Под окнами, у стражи на виду,\
 			тень, удлинившись, сделалась крылатой."
-		if(begin == None and end == None):
-			return (text)
-		elif(begin != None or end != None):
-			return (text[begin:end])
+		return text if begin is None and end is None else text[begin:end]
 	else:
 		raise HTTPException(status_code = 404 , detail = "404")
 
@@ -141,12 +132,9 @@ def Vardan_books(name_of_book: str , begin: int = None  ,end: int = None):
 		а человек подумал, что это яйцо разбилось, и ослик выскочил из него и бросился он за ним, \
 		и звал зайца: «Эй, ослик индийский, горе мне, не убегай, пожалей ты меня, вернись!»."
 
-		
-		if(begin == None and end == None):
-			return (text)
-		elif(begin != None or end != None):
-			return (text[begin:end])
-	elif (name_of_book == "lion"):
+
+		return text if begin is None and end is None else text[begin:end]
+	elif name_of_book == "lion":
 		text = "Сидел могучий лев на дороге, а по ней пробегали всевозможные звери. Лев \
 			спросил их: «От кого в ужасном страхе бежите?» И они сказали: «Беги и ты, потому что идет человек.» \
 			И лев сказал: «Кто такой человек и что он, и в чем его сила, и какой его облик, что бежите вы от него?\
@@ -156,43 +144,19 @@ def Vardan_books(name_of_book: str , begin: int = None  ,end: int = None):
 			Давай-ка я сперва привяжу тебя, чтобы ты не убежал, пока я схожу да принесу свое оружие, потом и поборемся.» \
 			Лев сказал: «Поклянись, что придешь, и я послушаюсь тебя.» Человек поклялся, и лев сказал: «Теперь привяжи меня, уходи да возвращайся поскорей.\
 			Достал человек веревку, привязал льва крепко к дубу, срезал с дерева ветку, сделал прут и давай им стегать льва. И лев завопил:Если ты человек, бей сильней и нещадней по ребрам моим, ибо этакой дурьей голове так оно и следует»."
-		if(begin == None and end == None):
-			return (text)
-		elif(begin != None or end != None):
-			return (text[begin:end])
-	elif (name_of_book == "warrior"):
+		return text if begin is None and end is None else text[begin:end]
+	elif name_of_book == "warrior":
 		text = "Шел один мудрый воин на войну, и был он хром на обе ноги. \
 		И один из воинов ему сказал: «О, несчастный, куда идешь ты? Тебя убьют тотчас, ибо не сможешь ты бежать!» \
 		И сказал мудрый воин: \
 		«О, неразумный, я на войну иду не бежать, а стоять сражаться и побеждать!»."
-	
-		if(begin == None and end == None):
-			return (text)
-		elif(begin != None or end != None):
-			return (text[begin:end])
+
+		return text if begin is None and end is None else text[begin:end]
 	else:
 		raise HTTPException(status_code = 404 , detail = "404")
 @app.get("/libary/Paryer/{name_of_book}")
 def Paryer_books_tebya(name_of_book : str , begin: int = None  ,end: int = None):
-	if name_of_book == "tebya":
-		text = "Твои глаза, твои глаза, твои глаза та причина,\
-				Что мои глаза, мои глаза всю ночь не сомкнутся.\
-				Твои пальцы, твои пальцы, твои пальцы та причина,\
-				Что мои пальцы, мои пальцы хотят свет смесить.\
-				Твои руки, твои руки, голые руки есть та причина,\
-				Что моим глазам, моим глазам водопады снятся.\
-				Твой смех, твой смех, твой смех есть та причина,\
-				Что мой смех, мой смех отставку получил.\
-				Твоя походка, твоя походка, твоя походка та причина,\
-				Что по слуху пограничником, пограничником я стал.\
-				Тебя вот так имея – не имея, и есть та причина,\
-				Что потерял я свою гордость… победителя…"
-				
-		if(begin == None and end == None):
-			return (text)
-		elif(begin != None or end != None):
-			return (text[begin:end])
-	elif name_of_book == "ludi":
+	if name_of_book == "ludi":
 		text = "Есть люди, которые мир оседлав,\
 			Живут, словно едут верхом на коне,\
 			А есть, кто по жизни пешком прошагав,\
@@ -252,11 +216,8 @@ def Paryer_books_tebya(name_of_book : str , begin: int = None  ,end: int = None)
 			Живут, словно едут верхом на коне, \
 			А есть, кто по жизни пешком прошагав, \
 			Всю тяжесть, сгорбившись, несут на спине…"
-			
-		if(begin == None and end == None):
-			return (text)
-		elif(begin != None or end != None):
-			return (text[begin:end])
+
+		return text if begin is None and end is None else text[begin:end]
 	elif name_of_book == "soj":
 		text = "Я в жизни всем помог, себе я не помог.\
 			Всем впрок мои дары, мне самому не впрок.\
@@ -270,11 +231,23 @@ def Paryer_books_tebya(name_of_book : str , begin: int = None  ,end: int = None)
 			Доверившись другим, раскаялся я вмиг.\
 			Всё в жизни расточив, зачем я не привык\
 			Выпрашивать любовь, скупясь, как ростовщик?"
-		
-		if(begin == None and end == None):
-			return (text)
-		elif(begin != None or end != None):
-			return (text[begin:end])
+
+		return text if begin is None and end is None else text[begin:end]
+	elif name_of_book == "tebya":
+		text = "Твои глаза, твои глаза, твои глаза та причина,\
+				Что мои глаза, мои глаза всю ночь не сомкнутся.\
+				Твои пальцы, твои пальцы, твои пальцы та причина,\
+				Что мои пальцы, мои пальцы хотят свет смесить.\
+				Твои руки, твои руки, голые руки есть та причина,\
+				Что моим глазам, моим глазам водопады снятся.\
+				Твой смех, твой смех, твой смех есть та причина,\
+				Что мой смех, мой смех отставку получил.\
+				Твоя походка, твоя походка, твоя походка та причина,\
+				Что по слуху пограничником, пограничником я стал.\
+				Тебя вот так имея – не имея, и есть та причина,\
+				Что потерял я свою гордость… победителя…"
+
+		return text if begin is None and end is None else text[begin:end]
 	else:
 		raise HTTPException(status_code = 404 , detail = "404")
 
